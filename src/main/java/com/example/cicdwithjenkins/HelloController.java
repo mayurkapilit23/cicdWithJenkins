@@ -1,6 +1,7 @@
 package com.example.cicdwithjenkins;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -8,7 +9,12 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello from AWS EC2";
+        return "ci cd with jenkins on AWS EC2";
+    }
+
+    @GetMapping("/{name}/hello")
+    public String greet(@PathVariable String name) {
+        return "Hello " + name;
     }
 
 }
