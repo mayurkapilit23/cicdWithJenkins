@@ -14,7 +14,12 @@ public class HelloController {
 
     @GetMapping("/{name}/hello")
     public String greet(@PathVariable String name) {
-        return "Hello " + name;
+        return "Hello " + name + " ";
+    }
+
+    @GetMapping("/{value}")
+    public String multiply(@PathVariable int value) {
+        return "Ans " + value * value;
     }
 
 }
